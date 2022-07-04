@@ -1,0 +1,22 @@
+{
+	"name": "edgedb-upsert-repro",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"edgedb": "edgedb",
+		"edgedb:create-migration": "edgedb migration create",
+		"edgedb:migrate": "edgedb migrate",
+		"edgedb:codegen": "npx edgeql-js --output-dir codegen --force-overwrite",
+		"postedgedb:migrate": "yarn edgedb:codegen",
+		"start": "ts-node upsertUser.ts"
+	},
+	"dependencies": {
+		"edgedb": "^0.20.10",
+		"ts-node": "^10.8.2",
+		"typescript": "^4.7.4"
+	},
+	"devDependencies": {
+		"@tsconfig/recommended": "^1.0.1"
+	}
+}
